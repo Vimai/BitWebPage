@@ -44,9 +44,3 @@ def homepage(request):
                 template_name = "main/home.html",
                 context={"endereco":endereco, "history":history,"total":total})
 
-
-def balance_api(request):
-    
-    total_details = blockcypher.get_address_details('mhAwG2W3WuGF27oxx58GuwqXpY1hjQLiXz',coin_symbol='btc-testnet',confirmations=2)
-    return blockcypher.from_satoshis(total_details['balance'], 'btc')
-
